@@ -10,7 +10,7 @@ export default function Sidebar() {
           <Link
             key={index}
             href={link.path}
-            className="flex items-center text-white bg-gradient-to-r from-gradientLeftBlue to-gradientRightBlue rounded-lg p-1.5 my-4"
+            className="flex items-center text-white bg-gradient-to-r from-gradientLeftBlue to-gradientRightBlue rounded-lg p-2 mx-1 my-4"
           >
             <span className="h-6 w-6 rounded-full bg-gradient-to-b from-white to-iconColor flex items-center justify-center text-deeperBlue">
               {link.icon}
@@ -20,7 +20,7 @@ export default function Sidebar() {
         ))}
       </div>
       <button className="flex items-center text-white bg-deeperBlue p-2 rounded-lg">
-        <span>
+        <span className="pl-2">
           <ImSwitch />
         </span>
         <span className="text-xs font-bold ml-2">Sign Out</span>
