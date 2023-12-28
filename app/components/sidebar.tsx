@@ -4,7 +4,7 @@ import Link from "next/link";
 
 export default function Sidebar() {
   return (
-    <main className="bg-deepestBlue px-3 py-4 h-full flex flex-col justify-between rounded-r-md">
+    <main className="bg-deepestBlue px-3 py-4 h-full flex flex-col justify-between border-r-[.1px] border-deepBlue">
       <div>
         {SidebarLinks.map((link, index) => (
           <Link

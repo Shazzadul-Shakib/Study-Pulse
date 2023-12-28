@@ -1,7 +1,9 @@
-export default function Home() {
+import CreateGroup from "../components/createGroup";
+
+export default function StudyGourps() {
   return (
-    <main>
-      <h1>Home</h1>
+    <main className="h-full shadow-inner p-2 shadow-deepestBlue">
+      <CreateGroup />
     </main>
   );
 }

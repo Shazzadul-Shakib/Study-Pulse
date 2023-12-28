@@ -3,7 +3,7 @@ import { IoIosNotifications } from "react-icons/io";
 
 export default function Navbar() {
   return (
-    <main className="flex">
+    <main className="flex border-b-[.1px] border-deepBlue">
       <div className=" bg-deepestBlue basis-1/6 flex  items-center gap-3 pl-5 py-2">
         <Image src="/Study Pulse.png" width={38} height={38} alt="Logo"></Image>
         <h1 className="text-white font-bold hidden lg:flex">Study Pulse</h1>
