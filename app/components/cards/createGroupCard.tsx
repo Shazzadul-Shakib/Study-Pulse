@@ -1,4 +1,10 @@
-export default function CreateGroupCard() {
+import { ToggleModalHook } from "@/utils/types/types";
+
+export default function CreateGroupCard({
+  toggleModal,
+}: {
+  toggleModal: () => void;
+}) {
   return (
     <main className="w-1/3 bg-deeperBlue rounded-lg p-6">
       <h1 className="text-center text-white text-lg font-bold ">
@@ -39,7 +45,10 @@ export default function CreateGroupCard() {
           />
         </div>
         <div className="flex justify-end items-center gap-2">
-          <button className="p-2 rounded-md mt-3 text-white text-sm font-bold hover:bg-deepBlue  ">
+          <button
+            onClick={toggleModal}
+            className="p-2 rounded-md mt-3 text-white text-sm font-bold hover:bg-deepBlue  "
+          >
             Cancel
           </button>
           <input
