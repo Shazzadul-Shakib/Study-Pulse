@@ -9,3 +9,4 @@ export type sidebarLink = {
 export type ModalBodyProps ={
   card: ReactNode;
 }
+export type ToggleModalHook = () => [boolean, () => void];
