@@ -13,7 +13,7 @@ export default function protectedLayout({
         <div className="basis-1/6">
           <Sidebar />
         </div>
-        <div className="basis-5/6 flex-grow md:overflow-y-auto bg-deeperBlue">{children}</div>
+        <div className="basis-5/6 flex-grow md:overflow-y-auto bg-deepestBlue">{children}</div>
       </section>
     </main>
   );
