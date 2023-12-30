@@ -1,3 +1,4 @@
+import { CreategroupAction } from "@/actions/createGroup";
 import { CreateGroup } from "@/utils/zod_schema";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm, SubmitHandler } from "react-hook-form";
@@ -11,6 +12,7 @@ export default function CreateGroupCard({
   const {
     register,
     handleSubmit,
+    reset,
     formState: { errors, isSubmitting },
   } = useForm({
     resolver: zodResolver(CreateGroup),
@@ -22,23 +24,22 @@ export default function CreateGroupCard({
   });
 
   const onSubmit: SubmitHandler<z.infer<typeof CreateGroup>> = (values) => {
-    console.log(values);
+    CreategroupAction(values);
+    reset();
+    toggleModal();
   };
 
   return (
-    <main className="w-1/3 bg-deeperBlue rounded-lg p-6">
+    <main className=" bg-deeperBlue rounded-lg p-6 md:w-1/3">
       <h1 className="text-center text-white text-lg font-bold ">
         Create Study Group
       </h1>
-      <section className="mx-4">
+      <section className="mx-2 md:mx-4">
         <form onSubmit={handleSubmit(onSubmit)}>
           <div className="flex flex-col my-2">
-            <label htmlFor="groupName" className="text-xs text-white mb-2">
-              Group Name
-            </label>
+            <label className="text-xs text-white mb-2">Group Name</label>
             <input
               type="text"
-              name="groupName"
               {...register("groupName", { required: true })}
               className="p-2 rounded-md focus:outline-none focus:outline-gradientLeftBlue focus:ring-0"
             />
@@ -49,12 +50,9 @@ export default function CreateGroupCard({
             )}
           </div>
           <div className="flex flex-col my-2">
-            <label htmlFor="topicName" className="text-xs text-white mb-2">
-              Topic Name
-            </label>
+            <label className="text-xs text-white mb-2">Topic Name</label>
             <input
               type="text"
-              name="topicName"
               {...register("topicName", { required: true })}
               className="outline-none p-2 rounded-md focus:outline-gradientLeftBlue focus:ring-0"
             />
@@ -65,15 +63,11 @@ export default function CreateGroupCard({
             )}
           </div>
           <div className="flex flex-col my-2">
-            <label
-              htmlFor="entranceKey"
-              className="text-xs text-white mb-2 focus:text-gradientLeftBlue"
-            >
+            <label className="text-xs text-white mb-2 focus:text-gradientLeftBlue">
               Create Entrance Key
             </label>
             <input
               type="text"
-              name="entranceKey"
               {...register("entranceKey", { required: true })}
               className="outline-none p-2 rounded-md focus:outline-gradientLeftBlue focus:ring-0"
             />
