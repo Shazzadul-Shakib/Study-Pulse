@@ -10,3 +10,8 @@ export type ModalBodyProps ={
   card: ReactNode;
 }
 export type ToggleModalHook = () => [boolean, () => void];
+export type Inputs = {
+  groupName: string;
+  topicName: string;
+  entranceKey: string;
+};

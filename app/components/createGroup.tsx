@@ -1,4 +1,5 @@
 "use client";
+
 import { useToggleModal } from "@/hooks/useToggleModal";
 import svg from "@/public/Group-study.svg";
 import Image from "next/image";
