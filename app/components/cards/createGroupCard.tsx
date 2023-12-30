@@ -1,6 +1,7 @@
 import { CreategroupAction } from "@/actions/createGroup";
 import { CreateGroup } from "@/utils/zod_schema";
 import { zodResolver } from "@hookform/resolvers/zod";
+import { useFormStatus } from "react-dom";
 import { useForm, SubmitHandler } from "react-hook-form";
 import { z } from "zod";
 
@@ -22,6 +23,7 @@ export default function CreateGroupCard({
       entranceKey: "",
     },
   });
+  const { pending } = useFormStatus();
 
   const onSubmit: SubmitHandler<z.infer<typeof CreateGroup>> = (values) => {
     CreategroupAction(values);
@@ -86,7 +88,7 @@ export default function CreateGroupCard({
             </button>
             <input
               type="submit"
-              value="Create Group"
+              value={pending?'Creating...':'Create Group'}
               disabled={isSubmitting}
               className="bg-gradient-to-tr from-gradientLeftBlue to-gradientRightBlue p-2 rounded-md mt-3 text-white text-sm font-bold cursor-pointer"
             />
