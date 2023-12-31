@@ -1,8 +1,8 @@
 import connectMongoDB from "@/lib/mongoDB/mongo-client";
 import studyGroup from "@/lib/models/create-group-schema";
 import CreateGroup from "@/app/components/createGroup";
-import UpperBar from "@/app/components/upperBar";
 import StudyGroupCard from "@/app/components/cards/studyGroupCard";
+import UpperBar from "@/app/components/upperBar";
 
 export default async function StudyGourps() {
   await connectMongoDB();
