@@ -43,7 +43,7 @@ export default function CreateGroupCard({
             <input
               type="text"
               {...register("groupName", { required: true })}
-              className="p-2 rounded-md focus:outline-none focus:outline-gradientLeftBlue focus:ring-0"
+              className="p-2 rounded-md focus:outline-none text-black focus:outline-gradientLeftBlue focus:ring-0"
             />
             {errors.groupName && (
               <span className="text-xs text-red-600 py-1">
@@ -56,7 +56,7 @@ export default function CreateGroupCard({
             <input
               type="text"
               {...register("topicName", { required: true })}
-              className="outline-none p-2 rounded-md focus:outline-gradientLeftBlue focus:ring-0"
+              className="outline-none p-2 rounded-md text-black focus:outline-gradientLeftBlue focus:ring-0"
             />
             {errors.topicName && (
               <span className="text-xs text-red-600 py-1">
@@ -71,7 +71,7 @@ export default function CreateGroupCard({
             <input
               type="text"
               {...register("entranceKey", { required: true })}
-              className="outline-none p-2 rounded-md focus:outline-gradientLeftBlue focus:ring-0"
+              className="outline-none p-2 rounded-md text-black focus:outline-gradientLeftBlue focus:ring-0"
             />
             {errors.entranceKey && (
               <span className="text-xs text-red-600 py-1">
@@ -88,7 +88,7 @@ export default function CreateGroupCard({
             </button>
             <input
               type="submit"
-              value={pending?'Creating...':'Create Group'}
+              value={pending ? "Creating..." : "Create Group"}
               disabled={isSubmitting}
               className="bg-gradient-to-tr from-gradientLeftBlue to-gradientRightBlue p-2 rounded-md mt-3 text-white text-sm font-bold cursor-pointer"
             />

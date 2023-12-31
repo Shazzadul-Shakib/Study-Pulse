@@ -4,7 +4,7 @@ import Link from "next/link";
 
 export default function StudyGroupCard({...props}) {
   return (
-    <Link href='/' className="relative h-44 w-72 rounded-md shadow-lg overflow-hidden">
+    <div className="relative h-44 w-72 rounded-md shadow-lg overflow-hidden">
       <Image
         layout="fill"
         objectFit="cover"
@@ -21,6 +21,6 @@ export default function StudyGroupCard({...props}) {
           <h3 className="text-white text-xs font-bold ">{props.topicName}</h3>
         </div>
       </section>
-    </Link>
+    </div>
   );
 }
