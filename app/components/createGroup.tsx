@@ -6,11 +6,13 @@ import Image from "next/image";
 import ModalBody from "./modals/modalbody";
 import CreateGroupCard from "./cards/createGroupCard";
 
-export default function CreateGroup() {
+export default function CreateGroup({props}:{props:number}) {
   const [isOpen, toggleModal] = useToggleModal();
+  console.log(props)
 
   return (
-    <main className=" flex flex-col justify-center items-center gap-3">
+    <main className={`flex flex-col justify-center items-center gap-3 ${props ? 'hidden' : ''}`}>
+
       <div>
         <Image width={250} height={250} src={svg} alt="Group study svg"></Image>
       </div>
