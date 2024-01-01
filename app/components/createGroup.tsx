@@ -8,7 +8,6 @@ import CreateGroupCard from "./cards/createGroupCard";
 
 export default function CreateGroup({props}:{props:number}) {
   const [isOpen, toggleModal] = useToggleModal();
-  console.log(props)
 
   return (
     <main className={`flex flex-col justify-center items-center gap-3 ${props ? 'hidden' : ''}`}>

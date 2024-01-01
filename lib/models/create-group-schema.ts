@@ -1,7 +1,9 @@
 import mongoose, { Schema } from "mongoose";
+import { string } from "zod";
 
 const groupSchema = new Schema(
   {
+    groupId:String,
     groupName: String,
     topicName: String,
     entranceKey: String,
