@@ -7,7 +7,7 @@ export default function Hero({ group }: { group: StudyGroupCardProps }) {
   return (
     <main className="relative h-36 rounded-md">
       <Image
-        layout="fill"
+        fill
         objectFit="cover"
         src={backgroundImageSrc}
         alt="Background Image"

@@ -16,7 +16,7 @@ export default function StudyGroupCard({
       className="relative h-44 w-72 rounded-md shadow-lg overflow-hidden"
     >
       <Image
-        layout="fill"
+        fill
         objectFit="cover"
         src={backgroundImageSrc}
         alt="Background Image"

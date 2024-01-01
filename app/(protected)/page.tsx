@@ -7,25 +7,20 @@ import UpperBar from "../components/upperBar";
 export default async function Home() {
   await connectMongoDB();
   const studyGroups = await studyGroup.find();
-  
+
   return (
     <main className="h-full shadow-inner p-2 shadow-deepestBlue">
       <CreateGroup props={studyGroups.length} />
-      <section className={`${studyGroups.length ? "flex" : "hidden"} flex flex-col`}>
+      <section
+        className={`${studyGroups.length ? "flex" : "hidden"} flex flex-col`}
+      >
         <UpperBar />
-        <div className=" w-[90%] mt-6 mx-auto grid grid-cols-3 gap-">
+        <div className="  mt-6 mx-auto grid grid-cols-1 gap-6 md:grid-cols-3 md:w-[90%] md:gap-0">
           {studyGroups.map((studyGroup) => {
-            return (
-              <StudyGroupCard
-                key={studyGroup._id}
-                group={studyGroup}
-              />
-            );
+            return <StudyGroupCard key={studyGroup._id} group={studyGroup} />;
           })}
         </div>
-        
       </section>
-      
     </main>
   );
 }
