@@ -3,7 +3,6 @@ import StudyGroupCard from "../components/cards/studyGroupCard";
 import CreateGroup from "../components/createGroup";
 import studyGroup from "@/lib/models/create-group-schema";
 import UpperBar from "../components/upperBar";
-import ModalBody from "../components/modals/modalbody";
 
 export default async function Home() {
   await connectMongoDB();
@@ -19,8 +18,7 @@ export default async function Home() {
             return (
               <StudyGroupCard
                 key={studyGroup._id}
-                groupName={studyGroup.groupName}
-                topicName={studyGroup.topicName}
+                group={studyGroup}
               />
             );
           })}

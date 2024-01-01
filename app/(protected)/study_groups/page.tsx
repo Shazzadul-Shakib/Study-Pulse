@@ -17,13 +17,7 @@ export default async function StudyGourps() {
         <UpperBar />
         <div className=" w-[90%] mt-6 mx-auto grid grid-cols-3 gap-">
           {studyGroups.map((studyGroup) => {
-            return (
-              <StudyGroupCard
-                key={studyGroup._id}
-                groupName={studyGroup.groupName}
-                topicName={studyGroup.topicName}
-              />
-            );
+            return <StudyGroupCard key={studyGroup._id} group={studyGroup} />;
           })}
         </div>
       </section>
