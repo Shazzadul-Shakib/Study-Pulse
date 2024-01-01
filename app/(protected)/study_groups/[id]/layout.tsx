@@ -5,7 +5,8 @@ export default function IndividualStudyGroupLayout({
   children,
 }: {
   children: React.ReactNode;
-}) {
+  }) {
+  
   return (
     <main>
       <GroupUpperBar />

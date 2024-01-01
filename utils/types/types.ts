@@ -20,4 +20,5 @@ export type StudyGroupCardProps = {
   _id: string;
   groupName: string;
   topicName: string;
+  entranceKey:string,
 };

@@ -1,7 +1,10 @@
+'use client';
+
 import backgroundImageSrc from "@/public/sp.png";
 import { StudyGroupCardProps } from "@/utils/types/types";
 import Image from "next/image";
 import Link from "next/link";
+
 
 export default function StudyGroupCard({
   group,

@@ -15,7 +15,7 @@ export default async function Home() {
         className={`${studyGroups.length ? "flex" : "hidden"} flex flex-col`}
       >
         <UpperBar />
-        <div className="  mt-6 mx-auto grid grid-cols-1 gap-6 md:grid-cols-3 md:w-[90%] md:gap-0">
+        <div className=" mt-6 mx-auto grid grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-3  md:w-[90%] md:gap-x-0 md:gap-y-6">
           {studyGroups.map((studyGroup) => {
             return <StudyGroupCard key={studyGroup._id} group={studyGroup} />;
           })}
