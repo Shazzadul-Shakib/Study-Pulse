@@ -5,10 +5,12 @@ import Image from "next/image";
 export default function Hero({ group }: { group: StudyGroupCardProps }) {
   const { groupName, topicName } = group;
   return (
-    <main className="relative h-36 rounded-md">
+    <main className="relative h-36 rounded-md mb-4">
       <Image
         fill
-        objectFit="cover"
+        priority
+        sizes="100%"
+        style={{ objectFit: "cover" }}
         src={backgroundImageSrc}
         alt="Background Image"
         className="opacity-50 bg-gradient-to-b from-white to-black rounded-md"

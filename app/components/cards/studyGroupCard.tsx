@@ -20,7 +20,9 @@ export default function StudyGroupCard({
     >
       <Image
         fill
-        objectFit="cover"
+        style={{ objectFit: "cover" }}
+        priority
+        sizes="100%"
         src={backgroundImageSrc}
         alt="Background Image"
         className="opacity-50 bg-gradient-to-b from-white to-black rounded-md"

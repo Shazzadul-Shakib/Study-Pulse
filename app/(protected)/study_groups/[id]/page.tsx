@@ -1,16 +1,9 @@
-import Hero from "@/app/components/individual-study-group/hero";
-import studyGroup from "@/lib/models/create-group-schema";
-import connectMongoDB from "@/lib/mongoDB/mongo-client";
 
-export default async function IndividualStudyGroup({ params }: { para: string }) {
-  const { id } = params;
-
-  await connectMongoDB();
-  const result = await studyGroup.findById({ _id: id });
-
+export default async function IndividualStudyGroup() {
   return (
     <main>
-      <Hero group={result} />
+      <h1>Hello there</h1>
+      
     </main>
   );
 }
