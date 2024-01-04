@@ -11,11 +11,6 @@ export type ModalBodyProps ={
 }
 export type ToggleModalHook = () => [boolean, () => void];
 
-export type Inputs = {
-  groupName: string;
-  topicName: string;
-  entranceKey: string;
-};
 export type StudyGroupCardProps = {
   _id: string;
   groupName: string;

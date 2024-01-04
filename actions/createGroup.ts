@@ -16,6 +16,7 @@ export const CreategroupAction = async (data: z.infer<typeof CreateGroup>) => {
       groupName: name.groupName,
       topicName: name.topicName,
       entranceKey: name.entranceKey,
+      users:[]
     });
     revalidateTag("studygroups");
   } else {

@@ -1,9 +1,8 @@
 import mongoose, { Schema } from "mongoose";
-import { string } from "zod";
 
 const groupSchema = new Schema(
   {
-    groupId:String,
+    groupId: String,
     groupName: String,
     topicName: String,
     entranceKey: String,
@@ -13,5 +12,6 @@ const groupSchema = new Schema(
   }
 );
 
-const studyGroup = mongoose.models.studygroups || mongoose.model("studygroups", groupSchema);
+const studyGroup =
+  mongoose.models.studygroups || mongoose.model("studygroups", groupSchema);
 export default studyGroup;
