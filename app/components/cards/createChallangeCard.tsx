@@ -1,5 +1,5 @@
-import { CreategroupAction } from "@/actions/createGroup";
-import { CreateGroup } from "@/utils/zod_schema";
+'use client';
+import { CreateChallange } from "@/utils/zod_schema";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useFormStatus } from "react-dom";
 import { useForm, SubmitHandler } from "react-hook-form";
@@ -16,17 +16,23 @@ export default function CreateChallangeCard({
     reset,
     formState: { errors, isSubmitting },
   } = useForm({
-    resolver: zodResolver(CreateGroup),
+    resolver: zodResolver(CreateChallange),
     defaultValues: {
-      groupName: "",
-      topicName: "",
-      entranceKey: "",
-    },
+  challangeName: "",
+  completionTime: 0,
+  questionQuantity: 0,
+},
   });
   const { pending } = useFormStatus();
 
-  const onSubmit: SubmitHandler<z.infer<typeof CreateGroup>> = (values) => {
-    console.log(values);
+  const onSubmit: SubmitHandler<z.infer<typeof CreateChallange>> = (values) => {
+    const parsedValues = {
+      ...values,
+      completionTime: parseInt(values.completionTime, 10),
+      questionQuantity: parseInt(values.questionQuantity, 10),
+    };
+
+    console.log(parsedValues);
     // CreategroupAction(values);
     // reset();
     // toggleModal();
@@ -43,41 +49,35 @@ export default function CreateChallangeCard({
             <label className="text-xs text-white mb-2">Challange Name</label>
             <input
               type="text"
-              {...register("groupName", { required: true })}
+              {...register("challangeName", { required: true })}
               className="p-2 rounded-md focus:outline-none text-black focus:outline-gradientLeftBlue focus:ring-0"
             />
-            {errors.groupName && (
-              <span className="text-xs text-red-600 py-1">
-                {errors.groupName.message}
-              </span>
+            {errors.challangeName && (
+              <span>{errors.challangeName.message}</span>
             )}
           </div>
           <div className="flex flex-col my-2">
-            <label className="text-xs text-white mb-2">Topic Name</label>
+            <label className="text-xs text-white mb-2">Time To Complete</label>
             <input
-              type="text"
-              {...register("topicName", { required: true })}
+              type="number"
+              {...register("completionTime", { required: true })}
               className="outline-none p-2 rounded-md text-black focus:outline-gradientLeftBlue focus:ring-0"
             />
-            {errors.topicName && (
-              <span className="text-xs text-red-600 py-1">
-                {errors.topicName.message}
-              </span>
+            {errors.completionTime && (
+              <span>{errors.completionTime.message}</span>
             )}
           </div>
           <div className="flex flex-col my-2">
             <label className="text-xs text-white mb-2 focus:text-gradientLeftBlue">
-              Create Entrance Key
+              Question Quantity
             </label>
             <input
-              type="text"
-              {...register("entranceKey", { required: true })}
+              type="number"
+              {...register("questionQuantity", { required: true })}
               className="outline-none p-2 rounded-md text-black focus:outline-gradientLeftBlue focus:ring-0"
             />
-            {errors.entranceKey && (
-              <span className="text-xs text-red-600 py-1">
-                {errors.entranceKey.message}
-              </span>
+            {errors.questionQuantity && (
+              <span>{errors.questionQuantity.message}</span>
             )}
           </div>
           <div className="flex justify-end items-center gap-2">

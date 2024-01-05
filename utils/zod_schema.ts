@@ -12,3 +12,9 @@ export const CreateGroup = z.object({
     .min(5)
     .max(7),
 });
+
+export const CreateChallange = z.object({
+  challangeName: z.string(),
+  completionTime: z.number(),
+  questionQuantity: z.number(),
+});
