@@ -9,15 +9,18 @@ import { revalidateTag } from "next/cache";
 export const CreategroupAction = async (data: z.infer<typeof CreateGroup>) => {
   await connectMongoDB();
   const result = CreateGroup.safeParse(data as any);
+
   if (result.success) {
     const name = result.data;
+    name.users = [];
 
     await studyGroup.create({
       groupName: name.groupName,
       topicName: name.topicName,
       entranceKey: name.entranceKey,
-      users:[]
+      users: name.users,
     });
+
     revalidateTag("studygroups");
   } else {
     console.error("Validation failed:", result.error);

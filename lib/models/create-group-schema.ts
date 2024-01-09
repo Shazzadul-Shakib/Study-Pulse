@@ -2,10 +2,13 @@ import mongoose, { Schema } from "mongoose";
 
 const groupSchema = new Schema(
   {
-    groupId: String,
     groupName: String,
     topicName: String,
     entranceKey: String,
+    users: {
+      type: Array,
+      default: [] as any[],
+    },
   },
   {
     timestamps: true,
@@ -14,4 +17,5 @@ const groupSchema = new Schema(
 
 const studyGroup =
   mongoose.models.studygroups || mongoose.model("studygroups", groupSchema);
+
 export default studyGroup;
